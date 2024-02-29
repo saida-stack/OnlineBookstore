@@ -5,6 +5,11 @@ from django.urls import reverse_lazy
 from .forms import CustomUserCreationForm
 
 
+class LogInView(CreateView):
+    form_class = CustomUserCreationForm
+    template_name = 'registration/login.html'
+
+
 class SignUpView(CreateView):
     form_class = CustomUserCreationForm
     template_name = 'registration/signup.html'
