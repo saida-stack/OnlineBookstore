@@ -28,13 +28,13 @@
         </div>
         <div class="mx-2 text-white">
             {% if user.is_authenticated %}
-                <form action="#" method="post">
+                <form action="{% url 'logout' %}" method="post">
                     {% csrf_token %}
                     <button type="submit" class="btn btn-info">Log Out</button>
                 </form>
                 Welcome {{ user.username }}
             {% else %}
-                <a href="#" class="text-light">Log in</a> | <a href="#" class="text-light">Sign Up</a>
+                <a href="{% url 'login' %}" class="text-light">Log in</a> | <a href="{% url 'signup' %}" class="text-light">Sign Up</a>
             {% endif %}
         </div>
     </div>
