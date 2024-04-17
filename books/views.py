@@ -7,6 +7,7 @@ from .forms import BookForm
 class BooksListView(generic.ListView):
     model = Book
     template_name = 'books/books_list.html'
+    paginate_by = 2
 
     def get_queryset(self):
         return Book.objects.order_by('-date_modified')
